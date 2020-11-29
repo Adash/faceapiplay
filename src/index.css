@@ -5,6 +5,20 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /* palette */
+  --color-primary: #2EC4B6;
+  --color-primary-tint: #49D4C6;
+  --color-primary-shade: #27A599;
+  --color-primary-off: #CBF3F0;
+  --color-secondary: #FF9F1C;
+  --color-secondary-tint: #FFB347;
+  --color-secondary-shade: #F58F00;
+  --color-secondary-off: #FFBF69;
+  --color-white:#FFFFFF;
+  --color-black:#2E3532;
+  --color-dark: #303A2B;
+  
 }
 
 code {
