@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useRef } from 'react';
 import './VideoZone.css';
 import * as faceapi from 'face-api.js';
 
@@ -6,7 +6,6 @@ const models = 'https://simhub.github.io/avatar-face-expression/models';
 
 export const VideoZone = () => {
   const [videoOn, setVideoOn] = useState(false);
-  const [animationID, setAnimationID] = useState(false);
   const videoRef = useRef();
   const outputRef = useRef();
   const emotionRef = useRef();
@@ -43,6 +42,7 @@ export const VideoZone = () => {
         videoRef.current,
         true
       );
+      console.log(dimensions);
       const faceLocation = {
         x: result.detection._box._x,
         y: result.detection._box._y,
