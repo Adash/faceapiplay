@@ -28,8 +28,8 @@ video {
 #emotion {
   position: absolute;
   z-index: 108;
-  /* min-width: 20px;
-  min-height: 20px; */
+  min-width: 300px;
+  min-height: 300px;
   top: 100px;
   bottom: 100px;
 }

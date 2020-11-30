@@ -56,14 +56,15 @@ export const VideoZone = () => {
         fearful: '😱',
         neutral: '😐',
         surprised: '😳',
+        sad: '🙁',
       };
       const currentEmotion = result.expressions.asSortedArray()[0].expression;
       emotionRef.current.innerText = emotions[currentEmotion] || currentEmotion;
       emotionRef.current.style.cssText = `
-        top: ${faceLocation.y - faceLocation.height / 2}px;
-        left: ${faceLocation.x + 30 /*- faceLocation.width / 4*/}px;
+        top: ${faceLocation.y - 270 / 2}px;
+        left: ${faceLocation.x - 130 /*- faceLocation.width / 4*/}px;
         width: ${faceLocation.width}px;
-        font-size: ${faceLocation.width * 0.6}px;
+        font-size: ${faceLocation.width * 1.0}px;
       `;
       // faceapi.draw.drawDetections(outputRef.current, faceapi.resizeResults(result, dimensions));
     }
@@ -73,6 +74,9 @@ export const VideoZone = () => {
 
   return (
     <div className="videozone-wrapper">
+      <button className="booton" onClick={startStopVideo}>
+        {!videoOn ? 'Switch Video On' : 'Switch Video Off'}
+      </button>
       <div className="videobox-wrapper">
         <video
           onLoadedMetadata={() => onPlay(this)}
@@ -84,9 +88,6 @@ export const VideoZone = () => {
         <canvas id="overlay" ref={outputRef} />
         <div id="emotion" ref={emotionRef}></div>
       </div>
-      <button className="booton" onClick={startStopVideo}>
-        {!videoOn ? 'Video On' : 'Video Off'}
-      </button>
     </div>
   );
 };
